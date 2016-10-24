@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<robot name="mob">
+<robot name="quanser">
 
-	<link name="mob_origin"/>
+	<link name="quanser_origin"/>
 
 	<link name="chassis">
 		<visual>
