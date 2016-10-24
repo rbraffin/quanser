@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(quanser2DSFJ)
+project(quanser)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -77,7 +77,7 @@ find_package(catkin REQUIRED)
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES quanser2DSFJ
+#  LIBRARIES quanser
 #  CATKIN_DEPENDS other_catkin_pkg
 #  DEPENDS system_lib
 )
@@ -91,19 +91,19 @@ catkin_package(
 # include_directories(include)
 
 ## Declare a cpp library
-# add_library(quanser2DSFJ
-#   src/${PROJECT_NAME}/quanser2DSFJ.cpp
+# add_library(quanser
+#   src/${PROJECT_NAME}/quanser.cpp
 # )
 
 ## Declare a cpp executable
-# add_executable(quanser2DSFJ_node src/quanser2DSFJ_node.cpp)
+# add_executable(quanser_node src/quanser_node.cpp)
 
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
-# add_dependencies(quanser2DSFJ_node quanser2DSFJ_generate_messages_cpp)
+# add_dependencies(quanser_node quanser_generate_messages_cpp)
 
 ## Specify libraries to link a library or executable target against
-# target_link_libraries(quanser2DSFJ_node
+# target_link_libraries(quanser_node
 #   ${catkin_LIBRARIES}
 # )
 
@@ -122,7 +122,7 @@ catkin_package(
 # )
 
 ## Mark executables and/or libraries for installation
-# install(TARGETS quanser2DSFJ quanser2DSFJ_node
+# install(TARGETS quanser quanser_node
 #   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
@@ -147,7 +147,7 @@ catkin_package(
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_quanser2DSFJ.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_quanser.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()
