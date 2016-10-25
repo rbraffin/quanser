@@ -1,8 +1,8 @@
 <launch>
 
-	<param name="robot_description" textfile="$(find quanser2DSFJ)/urdf/quanser.urdf" />
+	<param name="robot_description" textfile="$(find quanser)/urdf/quanser.urdf" />
 	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
 	<node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
-	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find quanser2DSFJ)/urdf.rviz" required="true" />
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find quanser)/urdf.rviz" required="true" />
 
  </launch>

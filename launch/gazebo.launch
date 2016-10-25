@@ -14,7 +14,7 @@
 		<arg name="world_name" value="worlds/empty_sky.world" />
  	</include>
 
-	<param name="robot_description" textfile="$(find quanser2DSFJ)/urdf/quanser.urdf" />
+	<param name="robot_description" textfile="$(find quanser)/urdf/quanser.urdf" />
 
 	<node name="mov_spawner" pkg="gazebo_ros" type="spawn_model"
         	args="-urdf -model robot -param robot_description -model mob" respawn="false" output="screen" />
