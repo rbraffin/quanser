@@ -1,15 +1,13 @@
 <?xml version="1.0"?>
 <robot name="quanser">
 
-<!--'	<link name="quanser_origin"/>'-->
-
 	<link name="bloco">
 		<visual>
       			<geometry>
         			<box size="0.12 0.2 0.24"/>
  			</geometry>
 			<material name="black">
-				<color rgba="0 0 0 0.5"/>
+				<color rgba="0 0 0 1"/>
 			</material>
 		</visual>
 		<collision>
@@ -66,12 +64,6 @@
 		</inertial>
 	</link>
 	
-<!--	<joint name="origem" type="fixed" />
-		<origin xyz="0 0 0" rpy="0 0 0" />
-		<parent link="quanser_origin" />
-		<child link="bloco" />
-	</joint>
--->
 	<joint name="joint_bloco_link1" type="revolute">
 		<origin xyz="0.23 0.00 0.00" rpy="1.57 0 0" />
 		<parent link="bloco" />
@@ -86,16 +78,16 @@
 		<limit effort="30" velocity="1.0" lower="-1.57" upper="1.57" />
 	</joint>
 
-<!--
+
 	<gazebo reference="bloco">
-		<material>Gazebo/Gray</material>
+		<material>Gazebo/Black</material>
 	</gazebo>
 
 	<gazebo reference="link1">
-		<material>Gazebo/Gray</material>
+		<material>Gazebo/Black</material>
 	</gazebo>
 
 	<gazebo reference="link2">
-		<material>Gazebo/Gray</material>
-	</gazebo> -->
+		<material>Gazebo/Black</material>
+	</gazebo> 
 </robot>
