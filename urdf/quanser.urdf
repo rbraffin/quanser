@@ -3,10 +3,10 @@
 
 	<link name="quanser_origin"/>
 
-	<link name="chassis">
+	<link name="bloco">
 		<visual>
       			<geometry>
-        			<box size="0.12 0.08 0.003"/>
+        			<box size="0.24 0.24 0.24"/>
  			</geometry>
 			<material name="gray">
 				<color rgba="0.7 0.7 0.7 1"/>
@@ -14,7 +14,7 @@
 		</visual>
 		<collision>
 			<geometry>
-				<box size="0.12 0.08 0.003"/>
+				<box size="0.24 0.24 0.24"/>
 			</geometry>
 		</collision>
 		<inertial>
@@ -24,10 +24,10 @@
 		</inertial>
 	</link>
 
-	<link name="caster_support">
+	<link name="link1">
 		<visual>
       			<geometry>
-        			<cylinder radius="0.011" length="0.025"/>
+        			<box size="0.343 0.05 0.002"/>
  			</geometry>
 			<material name="gray">
 				<color rgba="0.7 0.7 0.7 1"/>
@@ -35,7 +35,7 @@
 		</visual>
 		<collision>
 			<geometry>
-				<cylinder radius="0.011" length="0.025"/>
+        			<box size="0.343 0.05 0.002"/>
 			</geometry>
 		</collision>
 		<inertial>
@@ -45,10 +45,10 @@
 		</inertial>
 	</link>
 
-	<link name="caster_right">
+	<link name="link2">
 		<visual>
       			<geometry>
-        			<box size="0.026 0.003 0.01" />
+        			<box size="0.267 0.05 0.002" />        			
  			</geometry>
 			<material name="gray">
 				<color rgba="0.7 0.7 0.7 1"/>
@@ -56,7 +56,7 @@
 		</visual>
 		<collision>
 			<geometry>
-        			<box size="0.026 0.003 0.01" />
+        			<box size="0.267 0.05 0.002" />        			
 			</geometry>
 		</collision>
 		<inertial>
@@ -65,175 +65,34 @@
 			<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
 		</inertial>
 	</link>
+	
+	<joint>
 
-	<link name="caster_left">
-		<visual>
-      			<geometry>
-        			<box size="0.026 0.003 0.01" />
- 			</geometry>
-			<material name="gray">
-				<color rgba="0.7 0.7 0.7 1"/>
-			</material>
-		</visual>
-		<collision>
-			<geometry>
-        			<box size="0.026 0.003 0.01" />
-			</geometry>
-		</collision>
-		<inertial>
-			<origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
-			<mass value="0.01" />
-			<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
-		</inertial>
-	</link>
-
-
-	<link name="right_wheel">
-		<visual>
-      			<geometry>
-        			<cylinder radius="0.035" length="0.005"/>
- 			</geometry>
-			<material name="black">
-				<color rgba="0.0 0 0 1"/>
-			</material>
-		</visual>
-		<collision>
-			<geometry>
-        			<cylinder radius="0.035" length="0.005"/>
-			</geometry>
-		</collision>
-		<inertial>
-			<origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
-			<mass value="0.05" />
-			<inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="1.0" />
-		</inertial>
-	</link>
-
-	<link name="left_wheel">
-		<visual>
-      			<geometry>
-        			<cylinder radius="0.035" length="0.005"/>
- 			</geometry>
-			<material name="black">
-				<color rgba="0.0 0 0 1"/>
-			</material>
-		</visual>
-		<collision>
-			<geometry>
-        			<cylinder radius="0.035" length="0.005"/>
-			</geometry>
-		</collision>
-		<inertial>
-			<origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
-			<mass value="0.05" />
-			<inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="1.0" />
-		</inertial>
-	</link>
-
-	<link name="caster_wheel">
-		<visual>
-      			<geometry>
-        			<sphere radius="0.01" />
- 			</geometry>
-			<material name="white">
-				<color rgba="1.0 1.0 1.0 1"/>
-			</material>
-		</visual>
-		<collision>
-			<geometry>
-        			<sphere radius="0.01" />
-			</geometry>
-		</collision>
-		<inertial>
-			<origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
-			<mass value="0.01" />
-			<inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="1.0" />
-		</inertial>
-	</link>
-
-	<joint name="chassis_joint" type="fixed">
-		<origin xyz="0.0 0.0 0.035" rpy="0 0 0" />
-		<parent link="quanser_origin" />
-		<child link="chassis" />
+	<joint name="joint_bloco_link1" type="revolute">
+		<origin xyz="0.12 0.0 0.0" rpy="0 0 0" />
+		<parent link="bloco" />
+		<child link="link1" />
+		<limit lower="-1.52" upper="1.52">
 	</joint>
 
-	<joint name="right_wheel_joint" type="continuous">
-		<origin xyz="0.035 0.05 0.0" rpy="1.5707 0 0" />
-		<parent link="chassis" />
-		<child link="right_wheel" />
-		<axis xyz="0 0 1" />
-	</joint>
-
-	<joint name="left_wheel_joint" type="continuous">
-		<origin xyz="0.035 -0.05 0.0" rpy="1.5707 0 0" />
-		<parent link="chassis" />
-		<child link="left_wheel" />
-		<axis xyz="0 0 1" />
-	</joint>
-
-	<joint name="caster_support_joint" type="continuous">
-		<origin xyz="-0.049 0.0 -0.0125" rpy="0 0 0" />
-		<parent link="chassis" />
-		<child link="caster_support" />
-		<axis xyz="0 0 1" />
-	</joint>
-
-	<joint name="caster_right_joint" type="fixed">
-		<origin xyz="-0.013 0.0115 -0.0125" rpy="0 0 0" />
-		<parent link="caster_support" />
-		<child link="caster_right" />
-		<axis xyz="0 0 1" />
-	</joint>
-
-	<joint name="caster_left_joint" type="fixed">
-		<origin xyz="-0.013 -0.0115 -0.0125" rpy="0 0 0" />
-		<parent link="caster_support" />
-		<child link="caster_left" />
-		<axis xyz="0 0 1" />
-	</joint>
-
-	<joint name="caster_wheel_right_joint" type="continuous">
-		<origin xyz="-0.013 -0.0115 0.0" rpy="1.5707 0 0" />
-		<parent link="caster_right" />
-		<child link="caster_wheel" />
-		<axis xyz="0 0 1" />
-	</joint>
-
-	<joint name="caster_wheel_left_joint" type="continuous">
-		<origin xyz="-0.013 -0.0115 0.0" rpy="1.5707 0 0" />
-		<parent link="caster_left" />
-		<child link="caster_wheel" />
-		<axis xyz="0 0 1" />
-		<mimic joint="caster_wheel_right_joint" />
+	<joint name="joint_link1_link2" type="revolute">
+		<origin xyz="0.12 0.0 0.0" rpy="0 0 0" />
+		<parent link="link1" />
+		<child link="link2" />
+		<limit lower="-1.52" upper="1.52">
 	</joint>
 
 
-	<gazebo reference="chassis">
+	<gazebo reference="bloco">
 		<material>Gazebo/Gray</material>
 	</gazebo>
 
-	<gazebo reference="caster_support">
+	<gazebo reference="link1">
 		<material>Gazebo/Gray</material>
 	</gazebo>
 
-	<gazebo reference="caster_right">
+	<gazebo reference="link2">
 		<material>Gazebo/Gray</material>
-	</gazebo>
-
-	<gazebo reference="caster_left">
-		<material>Gazebo/Gray</material>
-	</gazebo>
-
-	<gazebo reference="right_wheel">
-		<material>Gazebo/Black</material>
-	</gazebo>
-
-	<gazebo reference="left_wheel">
-		<material>Gazebo/Black</material>
-	</gazebo>
-
-	<gazebo reference="caster_wheel">
-		<material>Gazebo/White</material>
 	</gazebo>
 
 </robot>
