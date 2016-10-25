@@ -8,8 +8,8 @@
       			<geometry>
         			<box size="0.24 0.24 0.24"/>
  			</geometry>
-			<material name="gray">
-				<color rgba="1 0 0 0.7"/>
+			<material name="black">
+				<color rgba="0 0 0 1"/>
 			</material>
 		</visual>
 		<collision>
@@ -29,8 +29,8 @@
       			<geometry>
         			<box size="0.343 0.05 0.002"/>
  			</geometry>
-			<material name="gray">
-				<color rgba="0 1 0 0.7"/>
+			<material name="black">
+				<color rgba="0 0 0 1"/>
 			</material>
 		</visual>
 		<collision>
@@ -50,8 +50,8 @@
       			<geometry>
         			<box size="0.267 0.05 0.002" />        			
  			</geometry>
-			<material name="gray">
-				<color rgba="0 0 1 0.7"/>
+			<material name="black">
+				<color rgba="0 0 0 1"/>
 			</material>
 		</visual>
 		<collision>
@@ -86,7 +86,7 @@
 		<limit effort="30" velocity="1.0" lower="-1.52" upper="1.52" />
 	</joint>
 
-
+<!--
 	<gazebo reference="bloco">
 		<material>Gazebo/Gray</material>
 	</gazebo>
@@ -97,5 +97,5 @@
 
 	<gazebo reference="link2">
 		<material>Gazebo/Gray</material>
-	</gazebo>
+	</gazebo> -->
 </robot>
